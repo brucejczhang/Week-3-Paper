@@ -1,0 +1,89 @@
+---
+title: "Marriage License Statistics Research"
+subtitle: "A statistical approach to examine the effect of COVID-19 on marriage license rates in Toronto."
+author: 
+  - Bruce Zhang
+thanks: "Code and data are available at: LINK."
+date: 19 September 2024
+date-format: long
+abstract: "This is an abstract of this research article."
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(opendatatoronto)
+```
+
+
+# Introduction
+
+You can and should cross-reference sections and sub-sections. We use @citeR and @rohan.
+
+The remainder of this paper is structured as follows. @sec-data....
+
+
+
+# Data {#sec-data}
+
+Some of our data is of marriage licenses (@fig-marriage). 
+
+```{r}
+#| label: fig-marriage
+#| fig-cap: Marriage Licenses Relative to Time
+#| echo: false
+
+analysis_data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
+
+ggplot(data = analysis_data, mapping = aes(x = date, y = marriage_licenses)) +
+  geom_point() +
+  theme_minimal() +
+  labs(x = "Date", y = "Marriage Licences")
+```
+
+This graph shows the number of marriage licenses obtained relative to the date in Toronto. 
+
+# Discussion
+
+This section discusses the implications of the marriage data with regard to COVID-19. 
+
+## First discussion point {#sec-first-point}
+
+The dip around 2020 shows a decrease in marriage licensing shows the affect of COVID-19. There was a decreased marriage licensing rate during those times. 
+
+## Second discussion point
+
+## Third discussion point
+
+## Weaknesses and next steps
+
+The data used did not provided dates, only months and years were available. A better representation could be possible if exact dates were present. 
+
+\newpage
+
+\appendix
+
+# Appendix {-}
+
+
+# Additional data details
+
+# Model details {#sec-model-details}
+
+## Posterior predictive check
+
+## Diagnostics
+
+
+\newpage
+
+
+# References
+
+
